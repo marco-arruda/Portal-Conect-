@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Lista de Cursos</h1>
+    <a href="/cursos/create">Adicionar Curso</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cursos.forEach(curso=> { %>
+                <tr>
+                    <td>
+                        <%= curso.id_curso %>
+                    </td>
+                    <td>
+                        <%= curso.nome_curso %>
+                    </td>
+                    <td>
+                        <form action="/cursos/<%= curso.id_curso %>?_method=DELETE" method="POST">
+                            <button type="submit">Excluir</button>
+                        </form>
+                        <a href="/cursos/<%= curso.id_curso %>/edit">Editar</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
