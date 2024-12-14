@@ -19,5 +19,8 @@
     "method-override": "^3.0.0",
     "mongoose": "^8.8.4",
     "open": "^10.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
