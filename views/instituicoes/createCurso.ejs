@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Curso</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h2>Adicionar Curso</h2>
+    <form action="/cursos" method="POST">
+        <label for="codigo_ies">Código IES:</label>
+        <input type="number" name="codigo_ies" placeholder="Código IES" required>
+
+        <label for="nome_ies">Nome IES:</label>
+        <input type="text" name="nome_ies" placeholder="Nome IES" required>
+
+        <label for="sigla_ies">Sigla IES:</label>
+        <input type="text" name="sigla_ies" placeholder="Sigla IES" required>
+
+        <label for="categoria_administrativa">Categoria Administrativa:</label>
+        <input type="text" name="categoria_administrativa" placeholder="Categoria Administrativa" required>
+
+        <label for="codigo_curso">Código do Curso:</label>
+        <input type="number" name="codigo_curso" placeholder="Código do Curso" required>
+
+        <label for="nome_curso">Nome do Curso:</label>
+        <input type="text" name="nome_curso" placeholder="Nome do Curso" required>
+
+        <label for="grau">Grau:</label>
+        <input type="text" name="grau" placeholder="Grau" required>
+
+        <label for="modalidade">Modalidade:</label>
+        <input type="text" name="modalidade" placeholder="Modalidade" required>
+
+        <label for="cc">Conceito de Curso (CC):</label>
+        <input type="number" name="cc" placeholder="Conceito de Curso">
+
+        <label for="ano_cc">Ano do CC:</label>
+        <input type="number" name="ano_cc" placeholder="Ano do CC">
+
+        <label for="cpc">CPC:</label>
+        <input type="number" name="cpc" placeholder="CPC">
+
+        <label for="ano_cpc">Ano do CPC:</label>
+        <input type="number" name="ano_cpc" placeholder="Ano do CPC">
+
+        <label for="enade">ENADE:</label>
+        <input type="number" name="enade" placeholder="ENADE">
+
+        <label for="ano_enade">Ano do ENADE:</label>
+        <input type="number" name="ano_enade" placeholder="Ano do ENADE">
+
+        <label for="idd">IDD:</label>
+        <input type="number" name="idd" placeholder="IDD">
+
+        <label for="ano_idd">Ano do IDD:</label>
+        <input type="number" name="ano_idd" placeholder="Ano do IDD">
+
+        <label for="vagas_autorizadas">Vagas Autorizadas:</label>
+        <input type="number" name="vagas_autorizadas" placeholder="Vagas Autorizadas">
+
+        <label for="situacao">Situação:</label>
+        <input type="text" name="situacao" placeholder="Situação" required>
+
+        <label for="codigo_area_geral_cine">Código Área Geral CINE:</label>
+        <input type="number" name="codigo_area_geral_cine" placeholder="Código Área Geral CINE">
+
+        <label for="area_geral_cine">Área Geral CINE:</label>
+        <input type="text" name="area_geral_cine" placeholder="Área Geral CINE">
+
+        <label for="codigo_area_especifica_cine">Código Área Específica CINE:</label>
+        <input type="number" name="codigo_area_especifica_cine" placeholder="Código Área Específica CINE">
+
+        <label for="area_especifica_cine">Área Específica CINE:</label>
+        <input type="text" name="area_especifica_cine" placeholder="Área Específica CINE">
+
+        <label for="codigo_area_detalhada_cine">Código Área Detalhada CINE:</label>
+        <input type="number" name="codigo_area_detalhada_cine" placeholder="Código Área Detalhada CINE">
+
+        <label for="area_detalhada_cine">Área Detalhada CINE:</label>
+        <input type="text" name="area_detalhada_cine" placeholder="Área Detalhada CINE">
+
+        <label for="codigo_rotulo_cine">Código Rótulo CINE:</label>
+        <input type="text" name="codigo_rotulo_cine" placeholder="Código Rótulo CINE">
+
+        <label for="rotulo_cine">Rótulo CINE:</label>
+        <input type="text" name="rotulo_cine" placeholder="Rótulo CINE">
+
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+
+</html>

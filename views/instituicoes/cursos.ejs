@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -17,22 +16,36 @@
     <link rel="stylesheet" href="index/assets/css/owl.css">
     <link rel="stylesheet" href="index/assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
 </head>
 
 <body>
+
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
 
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <a href="/" class="logo">
+                        <a href="index.html" class="logo">
                             <img src="index/assets/images/logo.png" alt="CONECTE+ UNVERSIDADES">
                         </a>
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="/">Início</a></li>
-                            <li class="scroll-to-section"><a href="/cursos" class="active">Cursos</a></li>
+                            <li class="scroll-to-section"><a href="#top" class="active">Início</a></li>
+                            <li class="scroll-to-section"><a href="#services">Objetivos</a></li>
+                            <li class="scroll-to-section"><a href="#us">Sobre nós</a></li>
+                            <li class="scroll-to-section"><a href="#dados">Dados abertos</a></li>
+                            <li class="scroll-to-section"><a href="/instituicoes">Instituições</a></li>
+                            <li class="scroll-to-section"><a href="/cursos">Cursos</a></li>
                             <li class="scroll-to-section"><a id="entrar" href="">Entrar</a></li>
                             <li class="scroll-to-section"><a id="cadastrar" href="">Cadastre-se</a></li>
                         </ul>
@@ -82,49 +95,35 @@
 
     </header>
 
-    <div class="main-banner" id="top">
-
-    </div>
-
-    <div class="container mt-5">
-        <h1 class="text-center">Lista de Cursos</h1>
-        <div class="container-cursos">
-            <div class="row">
-                <div class="col">
-                    <a href="/cursos/create" class="btn btn-primary">Adicionar Curso</a>
-                    <br><br>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% cursos.forEach(curso=> { %>
-                                <tr>
-                                    <td>
-                                        <%= curso.id_curso %>
-                                    </td>
-                                    <td>
-                                        <%= curso.nome_curso %>
-                                    </td>
-                                    <td>
-                                        <form action="/cursos/<%= curso.id_curso %>?_method=DELETE" method="POST"
-                                            class="d-inline">
-                                            <button type="submit" class="btn btn-danger">Excluir</button>
-                                        </form>
-                                        <a href="/cursos/<%= curso.id_curso %>/edit" class="btn btn-warning">Editar</a>
-                                    </td>
-                                </tr>
-                                <% }) %>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1>Lista de Cursos</h1>
+    <a href="/cursos/create">Adicionar Curso</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cursos.forEach(curso=> { %>
+                <tr>
+                    <td>
+                        <%= curso.id_curso %>
+                    </td>
+                    <td>
+                        <%= curso.nome_curso %>
+                    </td>
+                    <td>
+                        <form action="/cursos/<%= curso.id_curso %>?_method=DELETE" method="POST">
+                            <button type="submit">Excluir</button>
+                        </form>
+                        <a href="/cursos/<%= curso.id_curso %>/edit">Editar</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
 
     <footer>
         <div class="container">

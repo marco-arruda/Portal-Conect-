@@ -4,7 +4,7 @@ const cursoController = {
     async getAllCursos(req, res) {
         try {
             const cursos = await cursoModel.getAllCursos();
-            res.render('cursos', { cursos });
+            res.render('cursos/cursos', { cursos });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
@@ -23,7 +23,7 @@ const cursoController = {
     async createCurso(req, res) {
         try {
             const curso = await cursoModel.createCurso(req.body);
-            res.redirect('/cursos'); // Redirecionar para a página de listagem de cursos após a criação
+            res.redirect('/cursos');
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
@@ -41,11 +41,12 @@ const cursoController = {
     },
     async deleteCurso(req, res) {
         try {
-            const curso = await cursoModel.deleteCurso(req.params.id);
-            if (!curso) {
+            const success = await cursoModel.deleteCurso(req.params.id);
+            if (success) {
+                // Se a exclusão falhar, a operação não foi bem sucedida, não foi possível encontrar o curso.
                 return res.status(404).json({ error: 'Curso não encontrado' });
             }
-            res.redirect('/cursos'); // Redirecionar para a página de listagem de cursos
+            res.redirect('/cursos');
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
@@ -56,13 +57,13 @@ const cursoController = {
             if (!curso) {
                 return res.status(404).json({ error: 'Curso não encontrado' });
             }
-            res.render('editCurso', { curso });
+            res.render('cursos/editCurso', { curso });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
     },
     async renderCreateCursoPage(req, res) {
-        res.render('createCurso');
+        res.render('cursos/createCurso');
     },
     async index(req, res) {
         try {

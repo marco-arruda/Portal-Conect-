@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="index/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="index/assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="index/assets/css/owl.css">
+    <link rel="stylesheet" href="index/assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="index/assets/images/logo.png" alt="CONECTE+ UNVERSIDADES">
+                        </a>
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#top" class="active">Início</a></li>
+                            <li class="scroll-to-section"><a href="#services">Objetivos</a></li>
+                            <li class="scroll-to-section"><a href="#us">Sobre nós</a></li>
+                            <li class="scroll-to-section"><a href="#dados">Dados abertos</a></li>
+                            <li class="scroll-to-section"><a href="/instituicoes">Instituições</a></li>
+                            <li class="scroll-to-section"><a href="/cursos">Cursos</a></li>
+                            <li class="scroll-to-section"><a id="entrar" href="">Entrar</a></li>
+                            <li class="scroll-to-section"><a id="cadastrar" href="">Cadastre-se</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1>Lista de Cursos</h1>
+    <a href="/cursos/create">Adicionar Curso</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cursos.forEach(curso=> { %>
+                <tr>
+                    <td>
+                        <%= curso.id_curso %>
+                    </td>
+                    <td>
+                        <%= curso.nome_curso %>
+                    </td>
+                    <td>
+                        <form action="/cursos/<%= curso.id_curso %>?_method=DELETE" method="POST">
+                            <button type="submit">Excluir</button>
+                        </form>
+                        <a href="/cursos/<%= curso.id_curso %>/edit">Editar</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+    <footer>
+        <div class="container">
+            <div class="col-lg-12">
+                <p>Copyright © 2024 EDUC SOLUTION. Todos os direitos reservados.&nbsp;&nbsp;&nbsp;</p>
+                <p>Projeto com fins educacionais.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="index/vendor/jquery/jquery.min.js"></script>
+    <script src="index/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="index/assets/js/isotope.min.js"></script>
+    <script src="index/assets/js/owl-carousel.js"></script>
+    <script src="index/assets/js/counter.js"></script>
+    <script src="index/assets/js/custom.js"></script>
+</body>
+
+</html>

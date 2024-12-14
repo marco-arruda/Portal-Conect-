@@ -2,95 +2,225 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Curso</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>CONECTE+ UNIVERSIDADES</title>
+
+    <link href="/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/index/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/index/assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="/index/assets/css/owl.css">
+    <link rel="stylesheet" href="/index/assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <h2>Adicionar Curso</h2>
-    <form action="/cursos" method="POST">
-        <label for="codigo_ies">Código IES:</label>
-        <input type="number" name="codigo_ies" placeholder="Código IES" required>
 
-        <label for="nome_ies">Nome IES:</label>
-        <input type="text" name="nome_ies" placeholder="Nome IES" required>
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="/" class="logo">
+                            <img src="/index/assets/images/logo.png" alt="CONECTE+ UNIVERSIDADES">
+                        </a>
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#top" class="active">Início</a></li>
+                            <li class="scroll-to-section"><a href="/cursos">Cursos</a></li>
+                            <li class="scroll-to-section"><a id="entrar" href="">Entrar</a></li>
+                            <li class="scroll-to-section"><a id="cadastrar" href="">Cadastre-se</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
-        <label for="sigla_ies">Sigla IES:</label>
-        <input type="text" name="sigla_ies" placeholder="Sigla IES" required>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="title">Bem-vindo de volta!</p>
+                <form class="form">
+                    <input type="email" class="input" placeholder="Email">
+                    <input type="password" class="input" placeholder="Senha">
+                    <p class="page-link">
+                        <span class="page-link-label">Esqueceu sua senha?</span>
+                    </p>
+                    <button class="form-btn">ENTRAR</button>
+                </form>
+                <p class="sign-up-label">
+                    Ainda não tem uma conta? <span class="sign-up-link">Increva-se aqui!</span>
+                </p>
+            </div>
+        </div>
+        </div>
 
-        <label for="categoria_administrativa">Categoria Administrativa:</label>
-        <input type="text" name="categoria_administrativa" placeholder="Categoria Administrativa" required>
+        <div id="signupModal" class="modal">
+            <div class="modal-content form-container">
+                <span class="close">&times;</span>
+                <p class="title">Faça parte da nossa comunidade!
+                </p>
+                <form class="form">
+                    <input type="text" class="input" placeholder="Nome completo">
+                    <input type="email" class="input" placeholder="e-mail">
+                    <input type="password" class="input" placeholder="Senha">
+                    <button class="form-btn">Criar conta</button>
+                </form>
+                <p class="sign-up-label">
+                    Já tem uma conta?<span class="sign-up-link"> Entre aqui!</span>
+                </p>
+            </div>
+        </div>
 
-        <label for="codigo_curso">Código do Curso:</label>
-        <input type="number" name="codigo_curso" placeholder="Código do Curso" required>
+    </header>
 
-        <label for="nome_curso">Nome do Curso:</label>
-        <input type="text" name="nome_curso" placeholder="Nome do Curso" required>
+    <div class="main-banner" id="top">
 
-        <label for="grau">Grau:</label>
-        <input type="text" name="grau" placeholder="Grau" required>
+    </div>
+    <div class="container mt-5">
+        <div class="container-cursos2 flex-column align-items-center">
+            <center>
+                <h2>Adicionar Curso</h2>
+            </center>
+            <form action="/cursos" method="POST">
+                <div class="form-group">
+                    <label for="codigo_ies">Código IES:</label>
+                    <input type="number" name="codigo_ies" class="form-control" placeholder="Código IES" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome_ies">Nome IES:</label>
+                    <input type="text" name="nome_ies" class="form-control" placeholder="Nome IES" required>
+                </div>
+                <div class="form-group">
+                    <label for="sigla_ies">Sigla IES:</label>
+                    <input type="text" name="sigla_ies" class="form-control" placeholder="Sigla IES" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria_administrativa">Categoria Administrativa:</label>
+                    <input type="text" name="categoria_administrativa" class="form-control"
+                        placeholder="Categoria Administrativa" required>
+                </div>
+                <div class="form-group">
+                    <label for="codigo_curso">Código do Curso:</label>
+                    <input type="number" name="codigo_curso" class="form-control" placeholder="Código do Curso"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="nome_curso">Nome do Curso:</label>
+                    <input type="text" name="nome_curso" class="form-control" placeholder="Nome do Curso" required>
+                </div>
+                <div class="form-group">
+                    <label for="grau">Grau:</label>
+                    <input type="text" name="grau" class="form-control" placeholder="Grau" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalidade">Modalidade:</label>
+                    <input type="text" name="modalidade" class="form-control" placeholder="Modalidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="cc">Conceito de Curso (CC):</label>
+                    <input type="number" name="cc" class="form-control" placeholder="Conceito de Curso">
+                </div>
+                <div class="form-group">
+                    <label for="ano_cc">Ano do CC:</label>
+                    <input type="number" name="ano_cc" class="form-control" placeholder="Ano do CC">
+                </div>
+                <div class="form-group">
+                    <label for="cpc">CPC:</label>
+                    <input type="number" name="cpc" class="form-control" placeholder="CPC">
+                </div>
+                <div class="form-group">
+                    <label for="ano_cpc">Ano do CPC:</label>
+                    <input type="number" name="ano_cpc" class="form-control" placeholder="Ano do CPC">
+                </div>
+                <div class="form-group">
+                    <label for="enade">ENADE:</label>
+                    <input type="number" name="enade" class="form-control" placeholder="ENADE">
+                </div>
+                <div class="form-group">
+                    <label for="ano_enade">Ano do ENADE:</label>
+                    <input type="number" name="ano_enade" class="form-control" placeholder="Ano do ENADE">
+                </div>
+                <div class="form-group">
+                    <label for="idd">IDD:</label>
+                    <input type="number" name="idd" class="form-control" placeholder="IDD">
+                </div>
+                <div class="form-group">
+                    <label for="ano_idd">Ano do IDD:</label>
+                    <input type="number" name="ano_idd" class="form-control" placeholder="Ano do IDD">
+                </div>
+                <div class="form-group">
+                    <label for="vagas_autorizadas">Vagas Autorizadas:</label>
+                    <input type="number" name="vagas_autorizadas" class="form-control" placeholder="Vagas Autorizadas">
+                </div>
+                <div class="form-group">
+                    <label for="situacao">Situação:</label>
+                    <input type="text" name="situacao" class="form-control" placeholder="Situação" required>
+                </div>
+                <div class="form-group">
+                    <label for="codigo_area_geral_cine">Código Área Geral CINE:</label>
+                    <input type="number" name="codigo_area_geral_cine" class="form-control"
+                        placeholder="Código Área Geral CINE">
+                </div>
+                <div class="form-group">
+                    <label for="area_geral_cine">Área Geral CINE:</label>
+                    <input type="text" name="area_geral_cine" class="form-control" placeholder="Área Geral CINE">
+                </div>
+                <div class="form-group">
+                    <label for="codigo_area_especifica_cine">Código Área Específica CINE:</label>
+                    <input type="number" name="codigo_area_especifica_cine" class="form-control"
+                        placeholder="Código Área Específica CINE">
+                </div>
+                <div class="form-group">
+                    <label for="area_especifica_cine">Área Específica CINE:</label>
+                    <input type="text" name="area_especifica_cine" class="form-control"
+                        placeholder="Área Específica CINE">
+                </div>
+                <div class="form-group">
+                    <label for="codigo_area_detalhada_cine">Código Área Detalhada CINE:</label>
+                    <input type="number" name="codigo_area_detalhada_cine" class="form-control"
+                        placeholder="Código Área Detalhada CINE">
+                </div>
+                <div class="form-group">
+                    <label for="area_detalhada_cine">Área Detalhada CINE:</label>
+                    <input type="text" name="area_detalhada_cine" class="form-control"
+                        placeholder="Área Detalhada CINE">
+                </div>
+                <div class="form-group">
+                    <label for="codigo_rotulo_cine">Código Rótulo CINE:</label>
+                    <input type="text" name="codigo_rotulo_cine" class="form-control" placeholder="Código Rótulo CINE">
+                </div>
+                <div class="form-group">
+                    <label for="rotulo_cine">Rótulo CINE:</label>
+                    <input type="text" name="rotulo_cine" class="form-control" placeholder="Rótulo CINE">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
+            </form>
+        </div>
+    </div>
 
-        <label for="modalidade">Modalidade:</label>
-        <input type="text" name="modalidade" placeholder="Modalidade" required>
+    <footer>
+        <div class="container">
+            <div class="col-lg-12">
+                <p>Copyright © 2024 EDUC SOLUTION. Todos os direitos reservados.&nbsp;&nbsp;&nbsp;</p>
+                <p>Projeto com fins educacionais.</p>
+            </div>
+        </div>
+    </footer>
 
-        <label for="cc">Conceito de Curso (CC):</label>
-        <input type="number" name="cc" placeholder="Conceito de Curso">
-
-        <label for="ano_cc">Ano do CC:</label>
-        <input type="number" name="ano_cc" placeholder="Ano do CC">
-
-        <label for="cpc">CPC:</label>
-        <input type="number" name="cpc" placeholder="CPC">
-
-        <label for="ano_cpc">Ano do CPC:</label>
-        <input type="number" name="ano_cpc" placeholder="Ano do CPC">
-
-        <label for="enade">ENADE:</label>
-        <input type="number" name="enade" placeholder="ENADE">
-
-        <label for="ano_enade">Ano do ENADE:</label>
-        <input type="number" name="ano_enade" placeholder="Ano do ENADE">
-
-        <label for="idd">IDD:</label>
-        <input type="number" name="idd" placeholder="IDD">
-
-        <label for="ano_idd">Ano do IDD:</label>
-        <input type="number" name="ano_idd" placeholder="Ano do IDD">
-
-        <label for="vagas_autorizadas">Vagas Autorizadas:</label>
-        <input type="number" name="vagas_autorizadas" placeholder="Vagas Autorizadas">
-
-        <label for="situacao">Situação:</label>
-        <input type="text" name="situacao" placeholder="Situação" required>
-
-        <label for="codigo_area_geral_cine">Código Área Geral CINE:</label>
-        <input type="number" name="codigo_area_geral_cine" placeholder="Código Área Geral CINE">
-
-        <label for="area_geral_cine">Área Geral CINE:</label>
-        <input type="text" name="area_geral_cine" placeholder="Área Geral CINE">
-
-        <label for="codigo_area_especifica_cine">Código Área Específica CINE:</label>
-        <input type="number" name="codigo_area_especifica_cine" placeholder="Código Área Específica CINE">
-
-        <label for="area_especifica_cine">Área Específica CINE:</label>
-        <input type="text" name="area_especifica_cine" placeholder="Área Específica CINE">
-
-        <label for="codigo_area_detalhada_cine">Código Área Detalhada CINE:</label>
-        <input type="number" name="codigo_area_detalhada_cine" placeholder="Código Área Detalhada CINE">
-
-        <label for="area_detalhada_cine">Área Detalhada CINE:</label>
-        <input type="text" name="area_detalhada_cine" placeholder="Área Detalhada CINE">
-
-        <label for="codigo_rotulo_cine">Código Rótulo CINE:</label>
-        <input type="text" name="codigo_rotulo_cine" placeholder="Código Rótulo CINE">
-
-        <label for="rotulo_cine">Rótulo CINE:</label>
-        <input type="text" name="rotulo_cine" placeholder="Rótulo CINE">
-
-        <button type="submit">Adicionar</button>
-    </form>
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/index/vendor/jquery/jquery.min.js"></script>
+    <script src="/index/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/index/assets/js/isotope.min.js"></script>
+    <script src="/index/assets/js/owl-carousel.js"></script>
+    <script src="/index/assets/js/counter.js"></script>
+    <script src="/index/assets/js/custom.js"></script>
 </body>
 
 </html>

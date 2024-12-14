@@ -2,20 +2,235 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Curso</title>
-    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>CONECTE+ UNIVERSIDADES</title>
+
+    <link href="/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/index/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/index/assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="/index/assets/css/owl.css">
+    <link rel="stylesheet" href="/index/assets/css/animate.css">
 </head>
 
-<body>
-    <h1>Editar Curso</h1>
-    <form action="/cursos/<%= curso.id_curso %>?_method=PUT" method="POST">
-        <label for="nome_curso">Nome do Curso:</label>
-        <input type="text" id="nome_curso" name="nome_curso" value="<%= curso.nome_curso %>" required>
-        <button type="submit">Salvar</button>
-    </form>
-    <a href="/cursos">Voltar</a>
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a href="/" class="logo">
+                        <img src="/index/assets/images/logo.png" alt="CONECTE+ UNIVERSIDADES">
+                    </a>
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="/">Início</a></li>
+                        <li class="scroll-to-section"><a href="/cursos" class="active">Cursos</a></li>
+                        <li class="scroll-to-section"><a id="entrar" href="">Entrar</a></li>
+                        <li class="scroll-to-section"><a id="cadastrar" href="">Cadastre-se</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="title">Bem-vindo de volta!</p>
+            <form class="form">
+                <input type="email" class="input" placeholder="Email">
+                <input type="password" class="input" placeholder="Senha">
+                <p class="page-link">
+                    <span class="page-link-label">Esqueceu sua senha?</span>
+                </p>
+                <button class="form-btn">ENTRAR</button>
+            </form>
+            <p class="sign-up-label">
+                Ainda não tem uma conta? <span class="sign-up-link">Increva-se aqui!</span>
+            </p>
+        </div>
+    </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content form-container">
+            <span class="close">&times;</span>
+            <p class="title">Faça parte da nossa comunidade!
+            </p>
+            <form class="form">
+                <input type="text" class="input" placeholder="Nome completo">
+                <input type="email" class="input" placeholder="e-mail">
+                <input type="password" class="input" placeholder="Senha">
+                <button class="form-btn">Criar conta</button>
+            </form>
+            <p class="sign-up-label">
+                Já tem uma conta?<span class="sign-up-link"> Entre aqui!</span>
+            </p>
+        </div>
+    </div>
+
+</header>
+
+<div class="main-banner" id="top">
+
+</div>
+
+<div class="container mt-5">
+    <div class="container-cursos d-flex flex-column align-items-center">
+        <h1 class="text-center mb-4">Editar Curso</h1>
+        <form action="/cursos/<%= curso.id_curso %>?_method=PUT" method="POST" class="w-50">
+            <div class="form-group">
+                <label for="codigo_ies">Código IES:</label>
+                <input type="number" id="codigo_ies" name="codigo_ies" value="<%= curso.codigo_ies %>"
+                    class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="nome_ies">Nome IES:</label>
+                <input type="text" id="nome_ies" name="nome_ies" value="<%= curso.nome_ies %>" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="sigla_ies">Sigla IES:</label>
+                <input type="text" id="sigla_ies" name="sigla_ies" value="<%= curso.sigla_ies %>" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="categoria_administrativa">Categoria Administrativa:</label>
+                <input type="text" id="categoria_administrativa" name="categoria_administrativa"
+                    value="<%= curso.categoria_administrativa %>" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="codigo_curso">Código do Curso:</label>
+                <input type="number" id="codigo_curso" name="codigo_curso" value="<%= curso.codigo_curso %>"
+                    class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="nome_curso">Nome do Curso:</label>
+                <input type="text" id="nome_curso" name="nome_curso" value="<%= curso.nome_curso %>"
+                    class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="grau">Grau:</label>
+                <input type="text" id="grau" name="grau" value="<%= curso.grau %>" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="modalidade">Modalidade:</label>
+                <input type="text" id="modalidade" name="modalidade" value="<%= curso.modalidade %>"
+                    class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="cc">Conceito de Curso (CC):</label>
+                <input type="number" id="cc" name="cc" value="<%= curso.cc %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="ano_cc">Ano do CC:</label>
+                <input type="number" id="ano_cc" name="ano_cc" value="<%= curso.ano_cc %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="cpc">CPC:</label>
+                <input type="number" id="cpc" name="cpc" value="<%= curso.cpc %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="ano_cpc">Ano do CPC:</label>
+                <input type="number" id="ano_cpc" name="ano_cpc" value="<%= curso.ano_cpc %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="enade">ENADE:</label>
+                <input type="number" id="enade" name="enade" value="<%= curso.enade %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="ano_enade">Ano do ENADE:</label>
+                <input type="number" id="ano_enade" name="ano_enade" value="<%= curso.ano_enade %>"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="idd">IDD:</label>
+                <input type="number" id="idd" name="idd" value="<%= curso.idd %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="ano_idd">Ano do IDD:</label>
+                <input type="number" id="ano_idd" name="ano_idd" value="<%= curso.ano_idd %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="vagas_autorizadas">Vagas Autorizadas:</label>
+                <input type="number" id="vagas_autorizadas" name="vagas_autorizadas"
+                    value="<%= curso.vagas_autorizadas %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="situacao">Situação:</label>
+                <input type="text" id="situacao" name="situacao" value="<%= curso.situacao %>" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="codigo_area_geral_cine">Código Área Geral CINE:</label>
+                <input type="number" id="codigo_area_geral_cine" name="codigo_area_geral_cine"
+                    value="<%= curso.codigo_area_geral_cine %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="area_geral_cine">Área Geral CINE:</label>
+                <input type="text" id="area_geral_cine" name="area_geral_cine" value="<%= curso.area_geral_cine %>"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="codigo_area_especifica_cine">Código Área Específica CINE:</label>
+                <input type="number" id="codigo_area_especifica_cine" name="codigo_area_especifica_cine"
+                    value="<%= curso.codigo_area_especifica_cine %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="area_especifica_cine">Área Específica CINE:</label>
+                <input type="text" id="area_especifica_cine" name="area_especifica_cine"
+                    value="<%= curso.area_especifica_cine %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="codigo_area_detalhada_cine">Código Área Detalhada CINE:</label>
+                <input type="number" id="codigo_area_detalhada_cine" name="codigo_area_detalhada_cine"
+                    value="<%= curso.codigo_area_detalhada_cine %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="area_detalhada_cine">Área Detalhada CINE:</label>
+                <input type="text" id="area_detalhada_cine" name="area_detalhada_cine"
+                    value="<%= curso.area_detalhada_cine %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="codigo_rotulo_cine">Código Rótulo CINE:</label>
+                <input type="text" id="codigo_rotulo_cine" name="codigo_rotulo_cine"
+                    value="<%= curso.codigo_rotulo_cine %>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="rotulo_cine">Rótulo CINE:</label>
+                <input type="text" id="rotulo_cine" name="rotulo_cine" value="<%= curso.rotulo_cine %>"
+                    class="form-control">
+            </div>
+            <a href="/cursos" class="btn btn-secondary mt-3">Voltar</a>
+            <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+        </form>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="col-lg-12">
+            <p>Copyright © 2024 EDUC SOLUTION. Todos os direitos reservados.&nbsp;&nbsp;&nbsp;</p>
+            <p>Projeto com fins educacionais.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="index/vendor/jquery/jquery.min.js"></script>
+<script src="index/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="index/assets/js/isotope.min.js"></script>
+<script src="index/assets/js/owl-carousel.js"></script>
+<script src="index/assets/js/counter.js"></script>
+<script src="index/assets/js/custom.js"></script>
 </body>
 
 </html>
